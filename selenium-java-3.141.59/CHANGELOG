@@ -1389,7 +1389,7 @@ WebDriver:
  * FIXED: 6830: (on behalf of GeorgeKlinich) Urlencoding result
    returned by server implementation of WebDriverBackedSelenium.
  * FIXED: 6834: Creating sesion cookie if expiry is not set. Fixes issue 6834
- * FIXED: 6947: Script timeout should get reset even when async
+ * FIXED: 6947: scripts.Script timeout should get reset even when async
    callback is called synchronously.
 
 WebDriverJS:
@@ -1773,7 +1773,7 @@ JS:
   * Update WebDriverJS to support parallel flows.  This change renames
    several low-level classes and functions in the promise module:
 
-      promise.Application                                 -> promise.ControlFlow
+      promise.application.Application                                 -> promise.ControlFlow
         #schedule(string, function)                       ->   #execute(function, [string])
         #scheduleTimeout(string, number)                  ->   #timeout(number, [string])
         #scheduleWait(string, function, number, [string]) ->   #wait(function, number, [string])
@@ -2293,7 +2293,7 @@ WebDriverJS:
   * JSONP support dropped in favour of CORS. For those browsers where
     CORS is not fully implemented, added a "/xdrpc" (cross-domain rpc)
     end-point.
-  * Change the promise.Application event loop to run at a set interval
+  * Change the promise.application.Application event loop to run at a set interval
     instead of trying to explicitly trigger it at the appropriate
     times. This makes debugging much simpler.
   * WebDriverJS hub front-end now renders correctly in IE.
